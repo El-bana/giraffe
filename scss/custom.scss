@@ -1,19 +1,21 @@
 // Custom variables
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
 
 $font-size-base: 1rem;
-$font-family-sans-serif: "Poppins", -apple-system, BlinkMacSystemFont,
-  "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-sans-serif: 'Poppins', -apple-system, BlinkMacSystemFont,
+  'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
-$font-family-hallelujah: "Gloria Hallelujah", "cursive";
+$font-family-hallelujah: 'Gloria Hallelujah', 'cursive';
 $h1-font-size: $font-size-base * 3.25;
 $headings-font-family: $font-family-sans-serif;
-$primary: #ffd200;
+$primary: #f6d215;
 $secondary: #000000;
 $body-color: #333333;
+$border-radius: 50px;
+$border-color: rgba(51, 51, 51, 0.1);
 $container-max-widths: (
   sm: 540px,
   md: 720px,
@@ -25,26 +27,38 @@ $btn-padding-y: 0.75rem;
 $btn-padding-x: 2.3125rem;
 $btn-font-weight: 500;
 $input-font-weight: 500;
-$input-padding-y: 0.625rem;
+$input-padding-y: 0.565rem;
 $input-padding-x: 1.625rem;
 
+$form-label-margin-bottom: 8px;
+$form-label-font-size: 14px;
+$form-label-font-weight: 500;
+$form-label-color: #000000;
+$form-check-input-border-radius: 50px;
+
+$input-border-radius: $border-radius;
+$input-border-color: $border-color;
+$input-border-width: 1px;
+$input-box-shadow: null;
+$input-placeholder-color: rgba(51, 51, 51, 0.3);
+
 // import bootstrap
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import '../node_modules/bootstrap/scss/bootstrap';
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
-@import "../node_modules/bootstrap/scss/functions";
-@import "../node_modules/bootstrap/scss/utilities";
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/utilities';
 
 // 2. Include any default variable overrides here
 $nav-link-padding-y: 12px;
 $nav-link-color: $dark;
 
 // 3. Include remainder of required Bootstrap stylesheets
-@import "../node_modules/bootstrap/scss/variables";
-@import "../node_modules/bootstrap/scss/mixins";
+@import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/mixins';
 
 // 4. Include any optional Bootstrap components as you like
-@import "../node_modules/bootstrap/scss/nav";
+@import '../node_modules/bootstrap/scss/nav';
 
 // 5. Add additional custom code here
 
@@ -73,9 +87,46 @@ body {
 .section-container {
   padding: 0 100px;
 }
+// NavBar
+
+.navbar {
+  margin-top: 24px;
+  font-family: Poppins;
+  margin-bottom: 165px;
+  .navbar-nav {
+    .nav-link {
+      font-size: 16px;
+      font-weight: 400;
+      color: black;
+      margin-right: 48px;
+      padding: 0;
+      position: relative;
+    }
+    .active {
+      font-weight: 500;
+    }
+    .active:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 36px;
+      height: 3px;
+      left: 64%;
+      background: #f6d215;
+      border-radius: 20px;
+      transform: translate(-50%);
+      top: -14%;
+    }
+  }
+  .login-button {
+    padding: 12px 38px;
+  }
+}
+
+// NavBar
 
 .just-show-me-demo-section {
-  background-image: url("../assets/images/home/bg-ten.png");
+  background-image: url('../assets/images/home/bg-ten.png');
   padding-top: 29px;
   padding-bottom: 77px;
   h2 {
@@ -99,7 +150,6 @@ body {
   .first-section {
     position: relative;
     .first-section__header {
-      padding-top: 165px;
       padding-bottom: 325px;
 
       h1 {
@@ -125,7 +175,7 @@ body {
   }
 
   .third-section {
-    background-image: url("../assets/images/home/second-bg.png");
+    background-image: url('../assets/images/home/second-bg.png');
     padding-top: 29px;
     padding-bottom: 77px;
     h3 {
@@ -383,3 +433,162 @@ body {
     }
   }
 }
+
+// What Makes us Different
+.different-page {
+  .first-section {
+    .first-section_title {
+      margin-bottom: 12px;
+      font-weight: 600;
+      color: #000000;
+    }
+    .first-section_talk {
+      font-size: 24px;
+      color: #d99f23;
+    }
+  }
+  .second-section {
+    background: #f7d215;
+    padding: 170px 0px 319px;
+    .second-section-container {
+      padding: 0 274px;
+    }
+    .second-section-card {
+      margin-bottom: 174px;
+
+      .second-section_cardTitle {
+        font-size: 36px;
+        margin-bottom: 28px;
+      }
+      .second-section_cardTalk {
+        margin-bottom: 64px;
+      }
+      .second-section_cardContent-cons {
+        margin-right: 15px;
+      }
+      .second-section_cardContent-pros {
+        margin-left: 15px;
+      }
+      .first-card-height {
+        height: 881px;
+      }
+      .second-card-height {
+        height: 1027px;
+      }
+      .third-card-height {
+        height: 1173px;
+      }
+      .fourth-card-height {
+        height: 1129px;
+      }
+      .second-section_cardContent {
+        background-color: white;
+        border-radius: 22px;
+        padding: 44px 56px 92px;
+
+        .second-section_cardContent-settingsIcon {
+          margin-bottom: 36px;
+        }
+        .second-section_cardContent-title {
+          margin-bottom: 57px;
+          font-size: 20px;
+          font-weight: 600;
+          color: #000000;
+        }
+        .second-section_cardContent-common {
+          margin-bottom: 42px;
+          .second-section_cardContent-common_img {
+            margin-bottom: 8px;
+          }
+          .second-section_cardContent-common_talk {
+            font-size: 15px;
+            font-weight: 500;
+            color: #333333;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+  }
+  .third-section-form-container {
+    padding: 105px 100px 68px 0px;
+    input {
+      max-width: 404px;
+    }
+    .radio-buttons-container {
+      height: 44.06px;
+      input {
+        width: 14px;
+        height: 14px;
+      }
+      label {
+        font-size: 14px;
+      }
+    }
+    textarea {
+      border-radius: 16px;
+      color: rgba(51, 51, 51, 0.3);
+    }
+    .inline-checkbox {
+      input {
+        width: 20px;
+        height: 20px;
+        margin-right: 12px;
+      }
+    }
+    .form-button {
+      width: 193px;
+      height: 44px;
+    }
+  }
+}
+// What Makes us Different
+
+// Case Studies
+
+.case-study {
+  .first-section_title {
+    margin-bottom: 42px;
+    font-weight: 600;
+  }
+}
+
+// Case Studies
+
+// Blog
+.blog {
+  .first-section {
+    margin-bottom: 97px;
+    .first-section_title {
+      margin-bottom: 42px;
+      font-weight: 600;
+    }
+  }
+  .cards-columns-container {
+    margin-bottom: 85px;
+  }
+}
+
+// Blog
+
+// Indvidual Blog
+
+.one-blog {
+  .first-section_backTo {
+    font-weight: 600;
+    margin-bottom: 38px;
+  }
+  .first-section_title {
+    margin-bottom: 42px;
+    font-weight: 600;
+  }
+  .first-section_date {
+    font-weight: 600;
+  }
+  .first-section_image {
+    margin-top: 67px;
+    margin-bottom: 38px;
+  }
+}
+
+// Indvidual Blog
